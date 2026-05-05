@@ -213,7 +213,7 @@ fun ChatScreen(
                 if (finalText.isNotBlank()) dispatchVoice(VoiceEvent.RecognizerFinal(finalText))
             }
             override fun onError(error: Int) {
-                dispatchVoice(VoiceEvent.RecognizerError("Recognizer error $error"))
+                dispatchVoice(VoiceEvent.fromRecognizerErrorCode(error))
             }
         })
         textToSpeech.setOnUtteranceProgressListener(object : UtteranceProgressListener() {

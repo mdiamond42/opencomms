@@ -104,6 +104,34 @@ class VoiceControllerTest {
     }
 
     @Test
+    fun recognizer_no_match_returns_to_idle_without_error_for_push_to_talk() {
+        val voice = controller(VoiceState(status = VoiceStatus.LISTENING, partialTranscript = "draft"))
+
+        val result = voice.dispatch(VoiceEvent.RecognizerNoMatch)
+
+        assertEquals(VoiceStatus.IDLE, result.state.status)
+        assertEquals("", result.state.partialTranscript)
+        assertEquals(null, result.state.errorReason)
+        assertEquals(emptyList<VoiceEffect>(), result.effects)
+    }
+
+    @Test
+    fun recognizer_no_match_restarts_listening_in_continual_mode() {
+        val voice = controller(VoiceState(status = VoiceStatus.LISTENING, continualArmed = true, continualConsented = true))
+
+        val result = voice.dispatch(VoiceEvent.RecognizerNoMatch)
+
+        assertEquals(VoiceStatus.LISTENING, result.state.status)
+        assertEquals(null, result.state.errorReason)
+        assertEquals(listOf(VoiceEffect.StartRecognition), result.effects)
+    }
+
+    @Test
+    fun android_recognizer_error_7_maps_to_no_match_event() {
+        assertEquals(VoiceEvent.RecognizerNoMatch, VoiceEvent.fromRecognizerErrorCode(7))
+    }
+
+    @Test
     fun recognizer_error_transitions_to_error_state_with_reason() {
         val voice = controller(VoiceState(status = VoiceStatus.LISTENING))
 

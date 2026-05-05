@@ -21,6 +21,7 @@ class VoiceController(initialState: VoiceState = VoiceState()) {
             VoiceEvent.PttPress -> onPttPress(state)
             is VoiceEvent.RecognizerPartial -> onRecognizerPartial(state, event.text)
             is VoiceEvent.RecognizerFinal -> onRecognizerFinal(state, event.text)
+            VoiceEvent.RecognizerNoMatch -> onRecognizerNoMatch(state)
             is VoiceEvent.RecognizerError -> error(state, event.reason)
             is VoiceEvent.ReplyReceived -> transition(
                 state.copy(status = VoiceStatus.SPEAKING, errorReason = null),
@@ -64,6 +65,18 @@ class VoiceController(initialState: VoiceState = VoiceState()) {
                 state.copy(status = VoiceStatus.THINKING, partialTranscript = "", errorReason = null),
                 VoiceEffect.SendTranscript(text),
             )
+        }
+
+        private fun onRecognizerNoMatch(state: VoiceState): VoiceTransition {
+            if (state.status != VoiceStatus.LISTENING) return transition(state.copy(errorReason = null))
+            return if (state.continualArmed && state.continualConsented) {
+                transition(
+                    state.copy(status = VoiceStatus.LISTENING, partialTranscript = "", errorReason = null),
+                    VoiceEffect.StartRecognition,
+                )
+            } else {
+                transition(state.copy(status = VoiceStatus.IDLE, partialTranscript = "", errorReason = null))
+            }
         }
 
         private fun onTtsFinished(state: VoiceState): VoiceTransition = when {
@@ -222,6 +235,7 @@ sealed class VoiceEvent {
     object PttPress : VoiceEvent()
     data class RecognizerPartial(val text: String) : VoiceEvent()
     data class RecognizerFinal(val text: String) : VoiceEvent()
+    object RecognizerNoMatch : VoiceEvent()
     data class RecognizerError(val reason: String) : VoiceEvent()
     data class ReplyReceived(val text: String) : VoiceEvent()
     object TtsFinished : VoiceEvent()
@@ -235,6 +249,16 @@ sealed class VoiceEvent {
     object Stop : VoiceEvent()
     object BargeIn : VoiceEvent()
     object SilenceTimeout : VoiceEvent()
+
+    companion object {
+        /** Android SpeechRecognizer.ERROR_NO_MATCH. Kept local so the reducer stays JVM-testable. */
+        private const val ERROR_NO_MATCH = 7
+
+        fun fromRecognizerErrorCode(error: Int): VoiceEvent = when (error) {
+            ERROR_NO_MATCH -> RecognizerNoMatch
+            else -> RecognizerError("Recognizer error $error")
+        }
+    }
 }
 
 sealed class VoiceEffect {

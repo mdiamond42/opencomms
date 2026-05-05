@@ -8,7 +8,7 @@ scan_root="${CHECK_NO_CLOUD_ROOT:-.}"
 
 rg -n --hidden \
   --glob '!node_modules/**' --glob '!dist/**' --glob '!dist-types/**' \
-  --glob '!docs/**' --glob '!specs/**' \
+  --glob '!.git/**' --glob '!docs/**' --glob '!specs/**' \
   --glob '!**/build/**' --glob '!**/.gradle/**' \
   --glob '!**/gradlew' --glob '!**/gradlew.bat' \
   --glob '!**/README.md' --glob '!**/test/**' --glob '!**/tests/**' \
