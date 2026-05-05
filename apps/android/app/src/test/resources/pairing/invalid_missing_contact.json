@@ -1,0 +1,5 @@
+{
+  "type": "opencomms_pairing_v1",
+  "relay_url": "https://relay.example.com",
+  "token": "DEV-PAIRING-TOKEN-PLACEHOLDER"
+}

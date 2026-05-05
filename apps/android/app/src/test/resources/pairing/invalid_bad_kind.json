@@ -1,0 +1,8 @@
+{
+  "type": "opencomms_pairing_v1",
+  "relay_url": "https://relay.example.com",
+  "token": "DEV-PAIRING-TOKEN-PLACEHOLDER",
+  "contact_id": "alien:x47:demo",
+  "contact_display_name": "X47",
+  "contact_kind": "alien"
+}

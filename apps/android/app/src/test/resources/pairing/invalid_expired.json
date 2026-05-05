@@ -1,0 +1,9 @@
+{
+  "type": "opencomms_pairing_v1",
+  "relay_url": "https://relay.example.com",
+  "token": "DEV-PAIRING-TOKEN-PLACEHOLDER",
+  "expires_at": "2020-01-01T00:00:00Z",
+  "contact_id": "agent:assistant:demo",
+  "contact_display_name": "Assistant",
+  "contact_kind": "agent"
+}

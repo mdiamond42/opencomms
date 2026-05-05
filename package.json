@@ -1,0 +1,35 @@
+{
+  "name": "agentcomms",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@9.15.4",
+  "scripts": {
+    "build": "pnpm -r build",
+    "dev": "sh scripts/dev.sh",
+    "dev:bridge": "pnpm --filter @agentcomms/bridge dev",
+    "dev:rendezvous": "pnpm --filter @agentcomms/rendezvous dev",
+    "dev:rendezvous-bridge": "pnpm --filter @agentcomms/bridge dev:rendezvous",
+    "smoke:rendezvous": "node scripts/smoke-rendezvous-phone.mjs",
+    "dev:client": "pnpm --filter @agentcomms/client dev",
+    "typecheck": "tsc -b",
+    "test": "vitest run",
+    "test:e2e": "vitest run test/e2e.test.ts",
+    "lint": "prettier --check . && eslint .",
+    "check:no-cloud": "sh scripts/check-no-cloud.sh",
+    "memory:export": "node scripts/export-opencomms-memory.mjs",
+    "memory:ingest": "sh scripts/ingest-opencomms-memory.sh",
+    "cli": "pnpm --filter @agentcomms/cli start"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.18.0",
+    "@types/node": "^22.10.7",
+    "@types/ws": "^8.5.13",
+    "eslint": "^9.18.0",
+    "prettier": "^3.4.2",
+    "typescript": "^5.7.3",
+    "typescript-eslint": "^8.20.0",
+    "vitest": "^2.1.8",
+    "ws": "^8.18.0"
+  }
+}

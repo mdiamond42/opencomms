@@ -1,0 +1,40 @@
+{
+  "name": "@agentcomms/bridge",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./contacts": {
+      "types": "./dist/contacts.d.ts",
+      "import": "./dist/contacts.js"
+    },
+    "./presence": {
+      "types": "./dist/presence.d.ts",
+      "import": "./dist/presence.js"
+    }
+  },
+  "bin": {
+    "agentcomms-bridge": "dist/index.js",
+    "agentcomms-rendezvous-bridge": "dist/rendezvousConnector.js"
+  },
+  "scripts": {
+    "build": "tsc -b",
+    "dev": "tsx src/index.ts",
+    "dev:rendezvous": "tsx src/rendezvousConnector.ts",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@agentcomms/protocol": "workspace:*",
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "@types/ws": "^8.5.13",
+    "tsx": "^4.19.2",
+    "vitest": "^2.1.8"
+  }
+}

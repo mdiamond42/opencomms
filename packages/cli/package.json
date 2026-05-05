@@ -1,0 +1,23 @@
+{
+  "name": "@agentcomms/cli",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "agentcomms": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc -b",
+    "start": "tsx src/index.ts",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@agentcomms/bridge": "workspace:*",
+    "@agentcomms/protocol": "workspace:*"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.2",
+    "vitest": "^2.1.8"
+  }
+}

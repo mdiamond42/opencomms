@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">OpenComms</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_title">Welcome to OpenComms</string>
+    <string name="onboarding_subtitle">A generic messaging client for humans, agents, devices, and services.</string>
+    <string name="onboarding_explainer">Add a contact by scanning a pairing QR or pasting a pairing code.</string>
+    <string name="onboarding_display_name_label">Display name</string>
+    <string name="onboarding_display_name_placeholder">My Phone</string>
+    <string name="onboarding_scan_qr">Scan pairing QR</string>
+    <string name="onboarding_paste_payload">Enter pairing payload manually</string>
+    <string name="onboarding_skip">Skip — set up later</string>
+    <string name="onboarding_get_started">Get started</string>
+
+    <!-- Pairing -->
+    <string name="pairing_title">Add Contact</string>
+    <string name="pairing_tab_scan">Scan QR</string>
+    <string name="pairing_tab_paste">Paste payload</string>
+    <string name="pairing_paste_hint">Paste pairing JSON here…</string>
+    <string name="pairing_validate">Validate</string>
+    <string name="pairing_confirm_add">Confirm add</string>
+    <string name="pairing_cancel">Cancel</string>
+    <string name="pairing_success">Added %1$s</string>
+    <string name="pairing_error_malformed_json">Invalid pairing payload: could not parse JSON.</string>
+    <string name="pairing_error_unsupported_type">Unsupported pairing format.</string>
+    <string name="pairing_error_missing_relay">Pairing payload is missing a relay URL.</string>
+    <string name="pairing_error_missing_contact">Pairing payload is missing contact information.</string>
+    <string name="pairing_error_bad_kind">Unknown contact kind in pairing payload.</string>
+    <string name="pairing_error_expired">This pairing payload has expired.</string>
+    <string name="pairing_error_missing_token">Pairing payload has no token. Ask the agent operator for a v1 simple payload.</string>
+    <string name="pairing_error_endpoint_not_implemented">This pairing requires a server-side flow not yet implemented. Ask the agent operator for a v1 simple payload.</string>
+
+    <!-- Contacts -->
+    <string name="contacts_title">OpenComms</string>
+    <string name="contacts_empty">No contacts yet. Add one with a pairing QR.</string>
+    <string name="contacts_add">Add contact</string>
+
+    <!-- Chat -->
+    <string name="chat_composer_hint">Message…</string>
+    <string name="chat_send">Send</string>
+    <string name="chat_state_idle">Idle</string>
+    <string name="chat_state_connecting">Connecting…</string>
+    <string name="chat_state_awaiting_register">Awaiting registration…</string>
+    <string name="chat_state_registered">Connected</string>
+    <string name="chat_state_disconnected">Disconnected</string>
+    <string name="chat_state_error">Error</string>
+    <string name="chat_retry">Retry</string>
+
+    <!-- Settings -->
+    <string name="settings_title">Settings</string>
+    <string name="settings_identity_section">Local Identity</string>
+    <string name="settings_display_name">Display name</string>
+    <string name="settings_human_id">Human ID</string>
+    <string name="settings_device_id">Device ID</string>
+    <string name="settings_regenerate_identity">Regenerate identity</string>
+    <string name="settings_regenerate_confirm_title">Regenerate identity?</string>
+    <string name="settings_regenerate_confirm_body">This will delete all contacts and transcripts. This cannot be undone.</string>
+    <string name="settings_relay_accounts_section">Relay Accounts</string>
+    <string name="settings_remove_relay">Remove</string>
+    <string name="settings_clear_data">Clear local data</string>
+    <string name="settings_clear_data_confirm_title">Clear all local data?</string>
+    <string name="settings_clear_data_confirm_body">All contacts, transcripts, and identity will be deleted.</string>
+    <string name="settings_export_diagnostics">Export diagnostics</string>
+    <string name="settings_about_section">About</string>
+    <string name="settings_about_text">OpenComms v0.1 — generic client</string>
+    <string name="settings_confirm">Confirm</string>
+    <string name="settings_cancel">Cancel</string>
+
+    <!-- Kind labels -->
+    <string name="kind_human">Human</string>
+    <string name="kind_agent">Agent</string>
+    <string name="kind_device">Device</string>
+    <string name="kind_service">Service</string>
+
+    <!-- Relay error codes -->
+    <string name="relay_error_unknown_recipient">The recipient is not registered on the relay.</string>
+    <string name="relay_error_unauthorized">Authorization failed. Check your relay token.</string>
+    <string name="relay_error_rate_limited">You are sending messages too quickly. Please wait.</string>
+    <string name="relay_error_generic">Relay error: %1$s</string>
+</resources>

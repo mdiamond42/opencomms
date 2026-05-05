@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<full-backup-content>
+    <!-- Explicitly exclude everything — android:allowBackup=false is set in the manifest -->
+</full-backup-content>

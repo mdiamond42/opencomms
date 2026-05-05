@@ -1,0 +1,9 @@
+{
+  "name": "AgentComms",
+  "short_name": "AgentComms",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f7f4ef",
+  "theme_color": "#233323",
+  "icons": []
+}

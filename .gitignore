@@ -1,0 +1,42 @@
+# Dependencies / build output
+node_modules/
+dist/
+dist-types/
+*.tsbuildinfo
+.vite/
+coverage/
+playwright-report/
+test-results/
+
+# Local config / secrets / runtime state
+.env
+.env.*
+.agentcomms/
+.secrets/
+.install/
+*.log
+*.db
+*.db-shm
+*.db-wal
+
+# Android generated/local files
+apps/android/.gradle/
+apps/android/**/build/
+apps/android/local.properties
+local.properties
+*.apk
+*.aab
+*.keystore
+*.jks
+google-services.json
+
+# Private/generated memory and internal implementation notes
+docs/memory/opencomms/*
+!docs/memory/opencomms/.gitkeep
+docs/plans/
+specs/
+
+# macOS/editor noise
+.DS_Store
+.idea/
+.vscode/

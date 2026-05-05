@@ -1,0 +1,18 @@
+{
+  "type": "envelope",
+  "envelope": {
+    "version": "0.1",
+    "id": "00000000-0000-4000-8000-000000000002",
+    "idempotency_key": "00000000-0000-4000-8000-000000000102",
+    "created_at": "2026-05-03T12:00:01Z",
+    "expires_at": "2026-05-03T12:05:01Z",
+    "sender": { "type": "agent", "id": "agent:assistant:demo" },
+    "recipient": { "type": "human", "id": "human:local:demo", "device_id": "device:android:demo" },
+    "channel": "text",
+    "intent": "message",
+    "requires_ack": true,
+    "correlation_id": null,
+    "payload": { "content_type": "text/plain", "body": "hi back" },
+    "permissions": { "may_execute_tools": false, "may_notify_human": true, "risk_level": "low" }
+  }
+}

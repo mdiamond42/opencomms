@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Speech-bubble / message icon representing OpenComms -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M54,22
+            C33.6,22 17,36.8 17,55
+            C17,65.2 22.1,74.3 30.2,80.4
+            L28,90
+            L38.2,85
+            C43.2,87 48.5,88 54,88
+            C74.4,88 91,73.2 91,55
+            C91,36.8 74.4,22 54,22 Z
+            M42,50 L66,50
+            C67.1,50 68,50.9 68,52
+            C68,53.1 67.1,54 66,54
+            L42,54
+            C40.9,54 40,53.1 40,52
+            C40,50.9 40.9,50 42,50 Z
+            M42,60 L60,60
+            C61.1,60 62,60.9 62,62
+            C62,63.1 61.1,64 60,64
+            L42,64
+            C40.9,64 40,63.1 40,62
+            C40,60.9 40.9,60 42,60 Z" />
+</vector>

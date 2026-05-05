@@ -1,0 +1,12 @@
+{
+  "type": "opencomms_pairing_v1",
+  "relay_url": "https://relay.example.com",
+  "pairing_token": "DEV-PAIRING-TOKEN-PLACEHOLDER",
+  "expires_at": "2099-12-31T23:59:59Z",
+  "contact": {
+    "id": "service:weather:demo",
+    "display_name": "Weather Service",
+    "kind": "service",
+    "capabilities": ["text"]
+  }
+}
