@@ -155,9 +155,27 @@ Local runtime files are intentionally ignored: `.secrets/`, `.install/`, generat
 
 Do not commit real relay tokens, API keys, private keys, transcripts, local pairing QR payloads, or personal agent configs.
 
+## Roadmap
+
+OpenComms is currently an early local-first release. Near-term work is focused on making relay choice explicit, portable, and easy for normal users.
+
+### Near term
+
+- **Bring your own relay**: let users enter a custom relay URL and token in the Android app instead of relying on a default hosted relay.
+- **Hosted relay option**: provide a simple hosted relay for users who want the app to work without deploying infrastructure.
+- **Relay identity cards**: signed share cards that include a contact ID, relay URL, public key, capabilities, and signature so contacts can be paired across user-controlled relay endpoints.
+- **Per-contact relay routing**: allow one app install to keep contacts on multiple relays and route each message through the relay declared by that contact card.
+- **Relay setup docs/scripts**: document a minimal self-hosted relay path for Fly.io, VPS, or other Node-friendly hosts.
+
+### Later
+
+- **Relay federation or bridging**: explore relay-to-relay forwarding so users on separate relays can communicate without manually adding each relay as a separate account.
+- **Production relay hardening**: improve monitoring, abuse controls, rate limits, and operational playbooks while keeping the relay dumb and message-body-free.
+- **Store release readiness**: Play Store packaging, privacy policy, data safety disclosures, closed testing, and subscription support for hosted relay convenience.
+
 ## Status
 
-This is an early open-source release. The core protocol, bridge, relay, CLI, browser dev client, and Android app are present, but production hardening is still ongoing.
+This is an early open-source release. The core protocol, bridge, relay, CLI, browser dev client, and Android app are present, but production hardening is still ongoing. Custom relay UX and relay identity cards are planned roadmap items, not completed features yet.
 
 ## License
 
